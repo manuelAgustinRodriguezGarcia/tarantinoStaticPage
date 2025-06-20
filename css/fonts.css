@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'pulp-fiction';
+    src: url('../fonts/aachen.otf') format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'tarantino';
+    src: url('../fonts/ITC-BenguiatBold.otf') format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'jackie-brown';
+    src: url('../fonts/benguiatCaslon.ttf') format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'jackie-brown-firulete';
+    src: url('../fonts/benguiatCaslonFirulete.ttf') format("opentype");
+    font-weight: normal;
+}
