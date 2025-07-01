@@ -39,16 +39,19 @@ header {
 
 header:hover {
     background-color: var(--main-yellow);
+
     .nav {
-        
+
         h1 {
-        color: #252525;
+            color: #252525;
         }
+
         .nav_list--item a {
             color: #252525;
             opacity: 0.8;
         }
-        .nav_list--item a:hover{
+
+        .nav_list--item a:hover {
             color: #252525;
             opacity: 1;
         }
@@ -58,22 +61,26 @@ header:hover {
 .nav {
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 1200px;
     height: 80px;
     position: relative;
 
-    h1 {
+    .nav_title {
+        text-decoration: none;
         position: absolute;
-        width: fit-content;
-        font-family: "tarantino";
-        font-variant: small-caps;
-        color: var(--main-yellow);
-        transition: all .5s ease-in-out;
-        font-size: 40px;
-        cursor: pointer;
 
-        &::selection {
-            background-color: transparent;
+        h1 {
+            width: fit-content;
+            font-family: "tarantino";
+            font-variant: small-caps;
+            color: var(--main-yellow);
+            transition: all .5s ease-in-out;
+            font-size: 40px;
+            cursor: pointer;
+
+            &::selection {
+                background-color: transparent;
+            }
         }
     }
 
@@ -124,6 +131,7 @@ header:hover {
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
         color: var(--main-yellow);
+
         img {
             width: 900px;
             height: auto;
@@ -192,19 +200,6 @@ header:hover {
     }
 }
 
-/* 
-@keyframes glowing {
-    0% {
-        filter: none;
-    }
-    50% {
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.75));
-    }
-    100% {
-        filter: none;
-    }
-} */
-
 .carousel_container {
     margin-top: 50px;
     width: 100%;
@@ -241,7 +236,7 @@ header:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg,rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0.6) 25%,rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0.8) 100%);
     transition: all 0.3s ease;
 }
 
@@ -327,6 +322,7 @@ header:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     &:hover {
         .init_title {
             color: var(--main-yellow);
@@ -344,7 +340,7 @@ header:hover {
     padding: 25px;
     background-color: #171717;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     border-left: 10px solid #9c9c9c;
     box-shadow: 2px 2px 10px #00000090;
     transition: all .5s ease-in-out;
@@ -369,12 +365,12 @@ header:hover {
 }
 
 .init_info--item:hover,
- .init_info--item:hover h4,
-  .init_info--item:hover p{
-      color: var(--main-yellow);
-      border-color: var(--main-yellow);
-    }
-    
+.init_info--item:hover h4,
+.init_info--item:hover p {
+    color: var(--main-yellow);
+    border-color: var(--main-yellow);
+}
+
 .init_info--item:hover {
     background-color: #252525;
 }
@@ -387,12 +383,14 @@ footer {
     align-items: center;
     padding: 20px;
     transition: all .5s ease-in-out;
+    border-top: 2px solid #9c9c9c;
 }
 
 footer:hover {
     background-color: #181818;
+
     h3 {
-        strong{
+        strong {
             color: var(--main-yellow);
             text-shadow: 3px 3px 1px var(--main-red);
         }
@@ -401,6 +399,7 @@ footer:hover {
 
 footer h3 {
     font-size: 20px;
+    font-weight: lighter;
     width: 100%;
     text-align: center;
     transition: all .5s ease-in-out;
@@ -426,12 +425,13 @@ h3 strong {
     justify-content: center;
     text-decoration: none;
     font-size: 18x;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 15%;
     height: 50px;
     background-color: #252525;
     transition: all .5s ease-in-out;
-    &:hover{
+
+    &:hover {
         color: var(--main-yellow);
         text-shadow: 3px 3px 1px var(--main-red);
         background-color: #333333;
@@ -448,4 +448,759 @@ h3 strong {
 .landing_banner figure img {
     animation: vanish;
     animation-timeline: scroll();
+}
+
+/*SECCION MOVIES*/
+.movies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+
+.movie {
+    scroll-margin-top: 160px;
+    width: 1200px;
+    padding: 25px;
+    height: 300px;
+    background-color: #141414E6;
+    border: solid 1px #141414E6;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: border .3s ease-in-out;
+    h3 {
+        font-size: 30px;
+        color: #fff;
+        transition: color .3s ease-in-out;
+    }
+
+    .movie_line {
+        width: 1px;
+        height: 100%;
+        border: rgba(255, 255, 255) solid 1px;
+        opacity: 0;
+    }
+
+    .movie_poster {
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .movie_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 900px;
+        height: 100%;
+
+        .movie_info_carousel {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 100%;
+
+            img {
+                width: 19%;
+                height: auto;
+                height: 100px;
+                object-fit: cover;
+                opacity: 0.5;
+                transition: opacity .3s ease-in-out;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .movie_info_text {
+            h4 {
+                font-family: 'tarantino';
+                font-variant: small-caps;
+                font-size: 40px;
+                width: fit-content;
+                transition: color .3s ease-in-out;
+            }
+            
+            p {
+                font-size: 17px;
+                font-weight: lighter;
+                opacity: .75;
+                transition: opacity .3s ease-in-out;
+            }
+        }
+    }
+    &:hover {
+        border: solid 1px var(--main-yellow);
+        h3 {
+            color: var(--main-yellow);
+        }
+        .movie_info_text {
+            h4 {
+                color: var(--main-yellow);
+            }
+            p {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/*FORM MOVIES*/
+.movie-form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 30px rgba(255, 193, 7, 0.8);
+    }
+}
+
+.form-title {
+    font-size: 3.5em;
+    font-weight: lighter;
+    text-align: center;
+    color: var(--main-yellow);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.form-subtitle {
+    font-size: 1.3em;
+    color: #ccc;
+    font-style: italic;
+}
+
+.movie-form {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 35px;
+}
+
+.form-section-title {
+    font-size: 1.5em;
+    color: var(--main-yellow);
+    margin-bottom: 20px;
+    font-weight: lighter;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+.form-label {
+    display: block;
+    color: var(--main-yellow);
+    font-weight: lighter;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(40, 40, 40, 0.8);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 10px;
+    color: #e0e0e0;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--main-yellow);
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    background: rgba(40, 40, 40, 0.8);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 10px;
+    color: #e0e0e0;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--main-yellow);
+    background: rgba(40, 40, 40, 1);
+}
+
+.form-textarea::placeholder {
+    color: #999;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    background: rgba(30, 30, 30, 0.6);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option:hover {
+    border-color: rgba(255, 193, 7, 0.5);
+    background: rgba(30, 30, 30, 0.8);
+    transform: translateX(5px);
+}
+
+.radio-option.selected {
+    border-color: var(--main-yellow);
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.radio-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 193, 7, 0.5);
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-input:checked+.radio-custom {
+    border-color: var(--main-yellow);
+}
+
+.radio-input:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--main-yellow);
+    border-radius: 50%;
+}
+
+.radio-movie-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.radio-movie-title {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: lighter;
+    margin-bottom: 3px;
+}
+
+.radio-movie-year {
+    color: var(--main-yellow);
+    font-size: 0.9em;
+}
+
+.form-submit-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.form-submit-btn {
+    background: linear-gradient(135deg, var(--main-yellow), var(--main-golden));
+    color: #252525;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: lighter;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.form-submit-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    color: #fff;
+}
+
+.form-submit-btn:active {
+    transform: translateY(-1px);
+}
+
+
+/*SECCION-BIOGRAFIA*/
+.biography-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+
+}
+
+.biography-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.biography-title {
+    font-size: 3.5em;
+    font-weight: lighter;
+    font-family: 'tarantino';
+    color: var(--main-yellow);
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.biography-subtitle {
+    font-size: 1.3em;
+    color: #ccc;
+    font-style: italic;
+}
+
+.biography-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.biography-image-section {
+    position: sticky;
+    top: 110px;
+}
+
+.biography-image {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.biography-image:hover {
+    transform: scale(1.01);
+}
+
+.quick-facts {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--main-yellow);
+}
+
+.quick-facts h3 {
+    color: var(--main-yellow);
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.fact-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fact-label {
+    font-weight: lighter;
+    color: var(--main-yellow);
+}
+
+.fact-value {
+    color: #e0e0e0;
+    text-align: right;
+}
+
+.biography-text {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.biography-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2em;
+    color: var(--main-yellow);
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--main-yellow);
+}
+
+.biography-paragraph {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.highlight {
+    color: var(--main-yellow);
+    font-weight: lighter;
+}
+
+.timeline {
+    margin-top: 30px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-year {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: var(--main-yellow);
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+.timeline-content {
+    width: 85%;
+    background: rgba(30, 30, 30, 0.6);
+    padding: 15px 20px;
+    border-radius: 15px;
+    border-left: 3px solid var(--main-yellow);
+    font-weight: lighter;
+
+    strong {
+        color: var(--main-yellow);
+    }
+}
+
+/*SECCION PREMIOS-AWARDS*/
+.awards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.awards-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 30px rgba(255, 193, 7, 0.8);
+    }
+}
+
+.awards-title {
+    font-size: 4em;
+    font-weight: lighter;
+    color: #ffc107;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.awards-subtitle {
+    font-size: 1.4em;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(20, 20, 20, 0.8);
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    transition: all 0.3s ease;
+    flex: 0 1 auto;
+}
+
+.stat-item:hover {
+    border-color: #ffc107;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: lighter;
+    color: #ffc107;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-top: 5px;
+}
+
+.awards-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.award-category {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    border-left: 6px solid #ffc107;
+}
+
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+    flex-wrap: wrap;
+}
+
+.category-icon {
+    font-size: 3.5em;
+    margin-right: 25px;
+    background: linear-gradient(135deg, #ffc107, #ff8f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex: 0 0 auto;
+}
+
+.category-title {
+    font-size: 2.2em;
+    color: #ffc107;
+    font-weight: lighter;
+    flex: 1;
+    min-width: 200px;
+    abbr {
+        color: #ffc107;
+    }
+}
+
+.category-summary {
+    font-size: 1.1em;
+    color: #ccc;
+    text-align: right;
+    flex: 0 0 auto;
+}
+
+.awards-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.award-card {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(40, 40, 40, 0.9));
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 350px;
+    min-width: 350px;
+}
+
+.award-card:hover {
+    border-color: #ffc107;
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2);
+}
+
+.award-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.award-won {
+    background: #ff9800;
+    color: white;
+}
+
+.award-nominated {
+    background: #fff;
+    color: #252525;
+}
+
+.award-year {
+    font-size: 1.3em;
+    color: #ffc107;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.award-title {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: lighter;
+    margin-bottom: 8px;
+}
+
+.award-movie {
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.award-description {
+    color: #aaa;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.major-awards {
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 143, 0, 0.1));
+    border-radius: 15px;
+    padding: 40px;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.major-award-item {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+}
+
+.major-award-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(3px);
+}
+
+.major-award-icon {
+    font-size: 3em;
+    margin-right: 25px;
+    width: 80px;
+    text-align: center;
+    flex: 0 0 80px;
+}
+
+.major-award-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.major-award-name {
+    font-size: 1.4em;
+    color: #ffc107;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+.major-award-details {
+    color: #e0e0e0;
+    font-size: 1.1em;
 }
