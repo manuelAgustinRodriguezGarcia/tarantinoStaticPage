@@ -224,6 +224,10 @@ header:hover {
     background-repeat: no-repeat;
 }
 
+.carousel_item h5 {
+    display: none;
+}
+
 .carousel_item:hover {
     flex: 3;
     border: solid 3px white;
@@ -474,6 +478,7 @@ h3 strong {
     justify-content: space-around;
     align-items: center;
     transition: border .3s ease-in-out;
+
     h3 {
         font-size: 30px;
         color: #fff;
@@ -532,7 +537,7 @@ h3 strong {
                 width: fit-content;
                 transition: color .3s ease-in-out;
             }
-            
+
             p {
                 font-size: 17px;
                 font-weight: lighter;
@@ -541,15 +546,19 @@ h3 strong {
             }
         }
     }
+
     &:hover {
         border: solid 1px var(--main-yellow);
+
         h3 {
             color: var(--main-yellow);
         }
+
         .movie_info_text {
             h4 {
                 color: var(--main-yellow);
             }
+
             p {
                 opacity: 1;
             }
@@ -683,7 +692,7 @@ h3 strong {
     background: rgba(40, 40, 40, 1);
 }
 
-.form-textarea::placeholder {
+c.form-textarea::placeholder {
     color: #999;
 }
 
@@ -928,6 +937,34 @@ h3 strong {
     text-align: justify;
 }
 
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    height: fit-content;
+    border-top: 1px solid #fff;
+    background-color: #181818;
+
+    p {
+        font-weight: lighter;
+
+        strong {
+            color: var(--main-yellow);
+            text-shadow: 3px 3px 3px var(--main-red);
+        }
+    }
+
+    h4 {
+        font-weight: lighter;
+        font-size: 22px;
+        color: var(--main-yellow);
+        text-shadow: 3px 3px 3px var(--main-red);
+    }
+}
+
 .highlight {
     color: var(--main-yellow);
     font-weight: lighter;
@@ -1074,6 +1111,7 @@ h3 strong {
     font-weight: lighter;
     flex: 1;
     min-width: 200px;
+
     abbr {
         color: #ffc107;
     }
@@ -1203,4 +1241,708 @@ h3 strong {
 .major-award-details {
     color: #e0e0e0;
     font-size: 1.1em;
+}
+
+/*Estilos Responsive*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    * {
+        max-width: 100%;
+    }
+
+
+    .landing_banner {
+        animation: none;
+        background-image: none;
+
+        figure {
+            img {
+                width: 90%;
+            }
+        }
+    }
+
+    .nav {
+        width: 100%;
+        background-color: var(--main-yellow);
+        height: 60px;
+
+    }
+
+    .nav_title h1 {
+        display: none;
+    }
+
+    .nav .nav_list {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav .nav_list:hover .nav_list--item a {
+
+        color: #252525;
+        opacity: 1;
+
+    }
+
+    .nav .nav_list .nav_list--item a {
+        padding: 0;
+        color: #252525;
+        font-size: 12px;
+        opacity: 1;
+    }
+
+    .nav .nav_list .nav_list--item a:hover {
+        color: #252525;
+        opacity: 1;
+    }
+
+    footer {
+        background-color: #181818;
+        padding: 20px;
+        height: auto;
+    }
+
+    footer h3 {
+        font-size: 16px;
+
+        strong {
+            color: var(--main-yellow);
+            text-shadow: 3px 3px 1px var(--main-red);
+        }
+    }
+
+    .footer_links {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .footer_links a {
+        width: 100%;
+
+    }
+
+    .init {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+
+    .carousel_container {
+        margin-top: 0;
+    }
+
+    .carousel_footer {
+        font-size: 16px;
+    }
+
+    .carousel_container {
+        flex-direction: column;
+        height: 600px;
+        gap: 10px;
+        padding: 20px;
+        overflow: visible;
+    }
+
+    .carousel_item {
+        overflow: visible;
+    }
+
+    .carousel_item h5 {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-weight: normal;
+        align-content: center;
+    }
+
+    .init_title {
+        width: 75%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .init_info--item {
+        width: 90%;
+        border-color: var(--main-yellow);
+    }
+
+    .init_info--item p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .init_info--item h4 {
+        font-size: 14px;
+    }
+
+    .biography-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+    }
+
+    .biography-header {
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .biography-title {
+        font-size: 2em;
+        font-weight: lighter;
+        font-family: 'tarantino';
+        color: var(--main-yellow);
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    .biography-subtitle {
+        font-size: 1em;
+        color: #ccc;
+        font-style: italic;
+        padding: 0 10px;
+    }
+
+    .biography-content {
+        display: block;
+        gap: 0;
+    }
+
+    .biography-image-section {
+        position: static;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .biography-image {
+        width: 100%;
+        max-width: 280px;
+        height: 280px;
+        border-radius: 12px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .biography-image:hover {
+        transform: scale(1.01);
+    }
+
+    .quick-facts {
+        background: rgba(20, 20, 20, 0.9);
+        padding: 20px 15px;
+        /* Padding reducido */
+        border-radius: 12px;
+        border-left: 3px solid var(--main-yellow);
+        /* Borde más fino */
+        margin-bottom: 25px;
+    }
+
+    .quick-facts h3 {
+        color: var(--main-yellow);
+        font-size: 1.1em;
+        /* Reducido de 1.3em */
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    .fact-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 100%;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        flex-wrap: wrap;
+    }
+
+    .fact-label {
+        font-weight: lighter;
+        color: var(--main-yellow);
+        font-size: 0.9em;
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .fact-value {
+        color: #e0e0e0;
+        text-align: right;
+        font-size: 0.9em;
+        flex: 1;
+    }
+
+    .biography-text {
+        background: rgba(20, 20, 20, 0.8);
+        padding: 20px 15px;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .biography-section {
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+        color: var(--main-yellow);
+        margin-bottom: 15px;
+        position: relative;
+        font-weight: lighter;
+        padding-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--main-yellow);
+    }
+
+    .biography-paragraph {
+        font-size: 0.95em;
+        line-height: 1.6;
+        color: #e0e0e0;
+        margin-bottom: 15px;
+        text-align: left;
+        padding: 0 5px;
+    }
+
+    @media (min-width: 320px) and (max-width: 360px) {
+        .biography-container {
+            padding: 15px 10px;
+        }
+
+        .biography-title {
+            font-size: 1.7em;
+            letter-spacing: 0.5px;
+        }
+
+        .biography-subtitle {
+            font-size: 0.9em;
+        }
+
+        .biography-image {
+            max-width: 250px;
+            height: 250px;
+        }
+
+        .quick-facts {
+            padding: 15px 12px;
+        }
+
+        .biography-text {
+            padding: 15px 12px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+        }
+
+        .biography-paragraph {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .fact-item {
+            flex-direction: column;
+            /* Apila los elementos en pantallas muy pequeñas */
+            align-items: flex-start;
+        }
+
+        .fact-value {
+            text-align: left;
+            margin-top: 2px;
+        }
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .timeline-year {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+    .form-title {
+        font-size: 30px;
+    }
+
+    .movie {
+        width: 95%;
+        flex-direction: column;
+        height: auto;
+        border: solid 1px var(--main-yellow);
+    }
+
+    .movie h3 {
+        display: none;
+    }
+
+    .movie .movie_info .movie_info_text h4 {
+        font-size: 20px;
+        color: var(--main-yellow);
+        width: 100%;
+        text-align: center;
+    }
+
+    .movie .movie_info .movie_info_text p {
+        font-size: 14px;
+    }
+
+    .movie .movie_info .movie_info_carousel {
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 5px;
+
+        img {
+            width: 100%;
+            opacity: 1;
+            max-height: 200px;
+        }
+    }
+
+    .movie-form-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-header .form-title {
+        font-size: 30px;
+    }
+
+    .form-header .form-subtitle {
+        font-size: 16px;
+    }
+
+    .form-header {
+        margin-bottom: 20px;
+    }
+
+    .movie-form {
+        padding: 20px;
+    }
+
+    .form-textarea {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .form-textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .form-submit-btn {
+        font-size: 18px;
+    }
+
+    .awards-title {
+        font-size: 30px;
+    }
+
+    .awards-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+    }
+
+    .awards-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .awards-title {
+        font-size: 2.2em;
+        font-weight: lighter;
+        color: #ffc107;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    .awards-subtitle {
+        font-size: 1em;
+        color: #ccc;
+        font-style: italic;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .stat-item {
+        text-align: center;
+        background: rgba(20, 20, 20, 0.8);
+        padding: 15px 20px;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 193, 7, 0.3);
+        flex: 0 1 auto;
+        margin-bottom: 15px;
+    }
+
+    .stat-number {
+        font-size: 2em;
+        font-weight: lighter;
+        color: #ffc107;
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 1em;
+        color: #e0e0e0;
+        margin-top: 5px;
+    }
+
+    .awards-sections {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .award-category {
+        background: rgba(20, 20, 20, 0.9);
+        border-radius: 12px;
+        padding: 20px 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        border-left: 4px solid #ffc107;
+    }
+
+    .category-header {
+        display: block;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+        text-align: center;
+    }
+
+    .category-icon {
+        font-size: 2.5em;
+        margin-right: 0;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #ffc107, #ff8f00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+    }
+
+    .category-title {
+        font-size: 1.6em;
+        color: #ffc107;
+        font-weight: lighter;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .category-title abbr {
+        color: #ffc107;
+    }
+
+    .category-summary {
+        font-size: 1em;
+        color: #ccc;
+        text-align: center;
+        display: block;
+    }
+
+    .awards-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .award-card {
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(40, 40, 40, 0.9));
+        border-radius: 12px;
+        padding: 20px 15px;
+        border: 1px solid rgba(255, 193, 7, 0.2);
+        position: relative;
+        overflow: hidden;
+        flex: none;
+        min-width: auto;
+    }
+
+    .award-status {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.7em;
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+
+    .award-won {
+        background: #ff9800;
+        color: white;
+    }
+
+    .award-nominated {
+        background: #fff;
+        color: #252525;
+    }
+
+    .award-year {
+        font-size: 1.2em;
+        color: #ffc107;
+        font-weight: lighter;
+        margin-bottom: 8px;
+    }
+
+    .award-title {
+        font-size: 1em;
+        color: #fff;
+        font-weight: lighter;
+        margin-bottom: 6px;
+        padding-right: 60px;
+    }
+
+    .award-movie {
+        color: #ccc;
+        font-style: italic;
+        margin-bottom: 8px;
+        font-size: 0.9em;
+    }
+
+    .award-description {
+        color: #aaa;
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+
+    .major-awards {
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 143, 0, 0.1));
+        border-radius: 12px;
+        padding: 20px 15px;
+        border: 2px solid rgba(255, 193, 7, 0.3);
+    }
+
+    .major-award-item {
+        display: block;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .major-award-icon {
+        font-size: 2.5em;
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: auto;
+        text-align: center;
+        display: block;
+    }
+
+    .major-award-content {
+        flex: none;
+        min-width: auto;
+    }
+
+    .major-award-name {
+        font-size: 1.2em;
+        color: #ffc107;
+        font-weight: lighter;
+        margin-bottom: 5px;
+    }
+
+    .major-award-details {
+        color: #e0e0e0;
+        font-size: 1em;
+    }
+
+    @media (min-width: 320px) and (max-width: 360px) {
+        .awards-container {
+            padding: 15px 10px;
+        }
+
+        .awards-title {
+            font-size: 1.8em;
+            letter-spacing: 0.5px;
+        }
+
+        .awards-subtitle {
+            font-size: 0.9em;
+        }
+
+        .stat-item {
+            padding: 12px 15px;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+        }
+
+        .award-category {
+            padding: 15px 10px;
+        }
+
+        .category-icon {
+            font-size: 2em;
+        }
+
+        .category-title {
+            font-size: 1.4em;
+        }
+
+        .category-summary {
+            font-size: 0.9em;
+        }
+
+        .award-card {
+            padding: 15px 10px;
+        }
+
+        .award-title {
+            padding-right: 50px;
+            font-size: 0.95em;
+        }
+
+        .major-awards {
+            padding: 15px 10px;
+        }
+
+        .major-award-item {
+            padding: 12px;
+        }
+
+        .major-award-icon {
+            font-size: 2em;
+        }
+
+        .major-award-name {
+            font-size: 1.1em;
+        }
+
+        .major-award-details {
+            font-size: 0.9em;
+        }
+    }
 }
