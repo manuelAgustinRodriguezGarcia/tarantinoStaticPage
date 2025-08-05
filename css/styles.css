@@ -469,13 +469,13 @@ h3 strong {
     scroll-margin-top: 160px;
     width: 1200px;
     padding: 25px;
-    height: 300px;
+    height: auto;
     background-color: #141414E6;
     border: solid 1px #141414E6;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     transition: border .3s ease-in-out;
 
@@ -496,7 +496,7 @@ h3 strong {
         height: 100%;
 
         img {
-            height: 100%;
+            height: 300px;
             width: auto;
         }
     }
@@ -1243,6 +1243,467 @@ c.form-textarea::placeholder {
     font-size: 1.1em;
 }
 
+.actors-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.actors-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.actors-header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 6px;
+    background: linear-gradient(90deg, #ffc107, #ff8f00, #ffc107);
+    border-radius: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 30px rgba(255, 193, 7, 0.8);
+    }
+}
+
+.actors-title {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #ffc107;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.actors-subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.actors-grid {
+    display: grid;
+    gap: 40px;
+}
+
+.actor-card {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.95));
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    min-height: 400px;
+}
+
+.actor-card:hover {
+    border-color: #ffc107;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(255, 193, 7, 0.2);
+}
+
+.actor-main-image {
+    flex: 0 0 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.actor-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.actor-card:hover .actor-main-image img {
+    transform: scale(1.05);
+}
+
+.actor-name-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 30px 20px 20px;
+    color: #ffc107;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.actor-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actor-info {
+    flex: 1;
+}
+
+.actor-debut {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 0 10px 10px 0;
+}
+
+.debut-label {
+    font-size: 0.9em;
+    color: #ffc107;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.debut-movie {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: normal;
+}
+
+.actor-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.actor-awards-section {
+    background: rgba(255, 193, 7, 0.05);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.actor-awards-title {
+    color: #ffc107;
+    font-weight: normal;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.actor-awards-text {
+    color: #ccc;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.other-movies {
+    margin-bottom: 25px;
+}
+
+.other-movies-title {
+    color: #ffc107;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.movies-gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.movie-thumb {
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-thumb:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.movie-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-title-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #fff;
+    font-size: 0.7em;
+    padding: 10px 5px 5px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: normal;
+}
+
+.movie-thumb:hover .movie-title-tooltip {
+    opacity: 1;
+}
+
+
+.stats-number {
+    font-size: 2.5em;
+    color: #ffc107;
+    font-weight: bold;
+    display: block;
+}
+
+.stats-label {
+    color: #ccc;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .actors-container {
+        padding: 40px 15px;
+    }
+
+    .actors-title {
+        font-size: 2.2em;
+        line-height: 1.2;
+    }
+
+    .actors-subtitle {
+        font-size: 1.1em;
+    }
+
+    .actors-grid {
+        gap: 30px;
+    }
+
+    .actor-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .actor-main-image {
+        flex: none;
+        height: 300px;
+    }
+
+    .actor-name-overlay {
+        position: static;
+        background: rgba(255, 193, 7, 0.1);
+        border-top: 2px solid #ffc107;
+        font-size: 1.4em;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .actor-content {
+        padding: 25px 20px;
+    }
+
+    .actor-description {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .movies-gallery {
+        justify-content: center;
+    }
+
+    .movie-thumb {
+        width: 70px;
+        height: 100px;
+    }
+
+    .actor-awards-section {
+        padding: 15px;
+    }
+
+    .stats-number {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .actors-title {
+        font-size: 2.8em;
+    }
+
+    .actor-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .actor-main-image {
+        flex: none;
+        height: 350px;
+    }
+
+    .actor-name-overlay {
+        position: static;
+        background: rgba(255, 193, 7, 0.1);
+        border-top: 2px solid #ffc107;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .actor-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .actor-card:nth-child(even) .actor-name-overlay {
+        text-align: right;
+    }
+}
+
+.gracias {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100dvh - 80px);
+}
+
+.gracias_container {
+    text-align: center;
+    background: var(--main-yellow);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--main-golden);
+    max-width: 500px;
+    width: 90%;
+    height: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--main-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    animation: pulse 2s infinite;
+    border: 3px solid var(--main-yellow);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(161, 15, 15, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(161, 15, 15, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(161, 15, 15, 0);
+    }
+}
+
+.checkmark {
+    font-size: 40px;
+    color: var(--main-yellow);
+    font-weight: bold;
+}
+
+.gracias_container h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #252525;
+}
+
+.gracias_container p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    text-shadow: 2px 2px 2px #252525;
+    line-height: 1.6;
+}
+
+.btn-home {
+    display: inline-block;
+    background: linear-gradient(45deg, #252525, var(--main-red));
+    color: var(--main-yellow);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--main-yellow);
+}
+
+.btn-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.btn-home:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
 /*Estilos Responsive*/
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -1266,7 +1727,6 @@ c.form-textarea::placeholder {
         width: 100%;
         background-color: var(--main-yellow);
         height: 60px;
-
     }
 
     .nav_title h1 {
@@ -1277,6 +1737,7 @@ c.form-textarea::placeholder {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        padding: 10px;
         gap: 0;
     }
 
@@ -1290,7 +1751,7 @@ c.form-textarea::placeholder {
     .nav .nav_list .nav_list--item a {
         padding: 0;
         color: #252525;
-        font-size: 12px;
+        font-size: 11px;
         opacity: 1;
     }
 
@@ -1439,17 +1900,14 @@ c.form-textarea::placeholder {
     .quick-facts {
         background: rgba(20, 20, 20, 0.9);
         padding: 20px 15px;
-        /* Padding reducido */
         border-radius: 12px;
         border-left: 3px solid var(--main-yellow);
-        /* Borde más fino */
         margin-bottom: 25px;
     }
 
     .quick-facts h3 {
         color: var(--main-yellow);
         font-size: 1.1em;
-        /* Reducido de 1.3em */
         margin-bottom: 15px;
         text-align: center;
         font-weight: lighter;
@@ -1649,6 +2107,7 @@ c.form-textarea::placeholder {
         padding: 10px;
         font-size: 16px;
     }
+
     .form-textarea::placeholder {
         font-size: 15px;
     }
@@ -1944,5 +2403,36 @@ c.form-textarea::placeholder {
         .major-award-details {
             font-size: 0.9em;
         }
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .checkmark {
+        font-size: 16px;
+    }
+
+    .gracias_container {
+        height: auto;
+        padding: 10px;
+    }
+
+    .gracias_container h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #252525;
+    }
+
+    .gracias_container p {
+        font-size: 16px;
+        text-shadow: 2px 2px 2px #252525;
+        margin-bottom: 10px;
+    }
+
+    .btn-home {
+        padding: 15px;
     }
 }
